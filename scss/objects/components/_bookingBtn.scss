@@ -1,0 +1,72 @@
+/**
+ * Component - Booking Btn
+ */
+
+.bookingBtn {
+  display: block;
+  width: 15rem;
+  margin: 1.5rem auto;
+  padding: 1.25rem;
+  border-radius: 2.25rem; 
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &.--fishing {
+    width: 18rem;
+    border: 1px solid #f58870;
+    background: #ffffff;
+    opacity: .85;
+
+    &:hover {
+      background: #ffffff;
+      opacity: 1;
+    }
+  }
+
+  &.--cuisine {
+    background: linear-gradient(90deg, #fef3d4, #fac39e);
+
+    &:hover {
+      background: linear-gradient(90deg, darken(#fef3d4, 5%), darken(#fac39e, 5%));
+    }
+  }
+
+  &.--nailFootcare {
+    background: linear-gradient(90deg, #cbf4ef, #afe1e9);
+
+    &:hover {
+      background: linear-gradient(90deg, darken(#cbf4ef, 5%), darken(#afe1e9, 5%));
+    }
+  }
+
+  &.--relaxation {
+    background: linear-gradient(90deg, #ffe7dd, #fdc8ee);
+
+    &:hover {
+      background: linear-gradient(90deg, darken(#ffe7dd, 5%), darken(#fdc8ee, 5%));
+    }
+  }
+
+  &.--cuisine_sm {
+    margin-bottom: 0;
+    background: linear-gradient(90deg, #fde5b8, #d5ffef);
+
+    &:hover {
+      background: linear-gradient(90deg, darken(#fde5b8, 5%), darken(#d5ffef, 5%));
+    }
+  }
+
+  &.--relaxation_sm {
+    margin-bottom: 0;
+    background: linear-gradient(90deg, #ffe7dd, #fdc8ee);
+
+    &:hover {
+      background: linear-gradient(90deg, darken(#ffe7dd, 5%), darken(#fdc8ee, 5%));
+    }
+  }
+}

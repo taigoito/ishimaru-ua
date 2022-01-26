@@ -3,12 +3,54 @@
  */
 
 .footer {
-  padding: 3rem 1.5rem;
-  background-color: themeColor("darkest");
-  color: colorYiq(themeColor("darkest"));
+  padding: 3rem 0 0;
+
+  a > img {
+    opacity: 1;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  &__bannerArea, &__socialBtns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 3rem 0;
+  }
+
+  &__banner {
+    width: 27rem;
+    margin: 0 1.5rem;
+  }
+
+  &__socialBtn {
+    width: 3rem;
+    margin: 0 1.5rem;
+  }
+
+  &__siteBrand {
+    padding: 1.5rem 0;
+    text-align: center;
+
+    .siteBrand {
+      width: 18rem;
+    }
+  }
+
+  &__siteInfo, &__copyright {
+    line-height: 1.92;
+  }
 
   &__copyright {
-    margin-bottom: 1.5rem;
+    padding: 1.5rem 0;
+    background-color: #dcd6f3;
     text-align: center;
+
+    p {
+      margin: 0;
+    }
   }
 }

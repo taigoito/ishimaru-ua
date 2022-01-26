@@ -1,14 +1,10 @@
 // Typography
 
 // 固有のフォント設定
-$fontFamilySansSerif:  "游ゴシック", "Yu Gothic", sans-serif;
-$fontFamilySerif:      "游明朝", "Yu Mincho", serif;
-$fontWeightSansSerif:  500; // 游ゴシック固有
-$fontWeightSerif:      400;
-//$fontFamilySansSerif:  "Noto Sans JP", sans-serif;
-//$fontFamilySerif:      "Noto Serif JP", serif;
-//$fontWeightSansSerif:  400;
-//$fontWeightSerif:      400;
+$fontFamilySansSerif:  ten-mincho, "游明朝", "Yu Mincho", serif;
+$fontFamilySerif:      ten-mincho, "游明朝", "Yu Mincho", serif;
+$fontWeightSansSerif:  500;
+$fontWeightSerif:      500;
 
 // フォントサイズ
 $fontSizes:            (
@@ -22,10 +18,10 @@ $fontSizes:            (
 );
 
 // body
-$fontFamilyBase:       $fontFamilySansSerif;
-$fontWeightBase:       $fontWeightSansSerif;
+$fontFamilyBase:       $fontFamilySerif;
+$fontWeightBase:       $fontWeightSerif;
 $lineHeightBase:       28.8 / ($rootFontSize / ($rootFontSize * 0 + 1)); // 単位除去
-$letterSpacingBase:    0;
+$letterSpacingBase:    .0625em;
 
 // セクション
 $sectionMarginTop:     0;
@@ -34,8 +30,8 @@ $sectionMarginBottom:  1.5rem;
 // 見出し
 $headingMarginTop:     1.5rem;
 $headingMarginBottom:  .75rem;
-$headingFontFamily:    $fontFamilySansSerif;
-$headingFontWeight:    $fontWeightSansSerif;
+$headingFontFamily:    $fontFamilySerif;
+$headingFontWeight:    $fontWeightSerif;
 $h1FontSize:           var(--xxl-font-size, map-get($fontSizes, "xxl"));
 $h2FontSize:           var(--xl-font-size, map-get($fontSizes, "xl"));
 $h3FontSize:           var(--lg-font-size, map-get($fontSizes, "lg"));

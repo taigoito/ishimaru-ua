@@ -1,0 +1,50 @@
+/**
+ * Project - Booking
+ */
+
+.booking {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 100%;
+    height: 56.25vw;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+
+    @media (min-width: breakpoint("md")) {
+      flex: 0 0 50%;
+      height: 28.125vw;
+    }
+
+    &.--relaxation {
+      background-image: url("./assets/cover_bookingBg1.jpg");
+    }
+    
+    &.--cuisine {
+      background-image: url("./assets/cover_bookingBg2.jpg");
+    }
+  }
+
+  &__content {
+    color: #ffffff;
+    text-align: center;
+  }
+
+  &__heading {
+    margin-bottom: 1.125rem;
+    font-size: 1.75rem;
+  }
+  
+  &__lead {
+    height: 3rem;
+    margin-bottom: 1.5rem;
+    font-size: .875rem;
+    line-height: 1.8;
+  }
+}

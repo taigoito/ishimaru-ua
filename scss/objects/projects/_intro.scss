@@ -1,0 +1,158 @@
+/**
+ * Project - Intro
+ */
+
+.intro {
+  @extend %section;
+  padding-top: 6rem;
+  margin-bottom: -24rem;
+  padding-bottom: 24rem;
+
+  &__primary {
+    display: flex;
+    flex-flow: row-reverse wrap;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    margin: 0 auto;
+
+    @media (min-width: breakpoint("md")) {
+      width: 60rem;
+    }
+  }
+
+  &__textContent {
+    height: 18rem;
+    margin: 0 0 9rem;
+    writing-mode: vertical-rl;
+  }
+
+  &__largeText {
+    margin: 0 0 0 1.5rem;
+    font-size: 1.75rem;
+  }
+
+  &__smallText {
+    margin: 3rem 0 0;
+    font-size: .875rem;
+    line-height: 1.8;
+  }
+
+  &__figure {
+    width: 21rem;
+    margin: 1.5rem 0 0 3rem;
+    
+    @media (min-width: breakpoint("md")) {
+      width: 24rem;
+      margin: 9rem 0 0 0;
+    }
+  }
+
+  &__secondary {
+    width: 30rem;
+    margin: 6rem auto;
+
+    @media (min-width: breakpoint("md")) {
+      width: 60rem;
+    }
+  }
+
+  &__cover {
+    @extend %section__cover;
+    background-image: url("./assets/cover_1.png");
+  
+    @media (min-width: breakpoint("md")) {
+      background-image: url("./assets/cover_1_md.png");
+    }
+  
+    @media (min-width: 1200px) {
+      background-image: url("./assets/cover_1_lg.png");
+    }
+  }
+
+  &__location {
+    position: absolute;
+    top: 3.75rem;
+    right: -9rem;
+    z-index: -1;
+    width: 50rem;
+    height: 40rem;
+    background: url("./assets/illust_location.svg") no-repeat 100% 100% / cover scroll;
+
+    @media (min-width: breakpoint("md")) {
+      top: 7.5rem;
+      right: -6rem;
+    }
+
+    @media (min-width: 1200px) {
+      right: -3rem;
+    }
+
+    @media (min-width: 1350px) {
+      right: 0;
+    }
+  }
+}
+
+.introBanner {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 30rem;
+  margin: 0 auto;
+  padding: 2.25rem;
+  background-color: themeColor("lightest");
+
+  @media (min-width: breakpoint("md")) {
+    width: 50rem;
+    justify-content: space-between;
+  }
+
+  &__thumb {
+    width: 100%;
+    margin: 0; // reset
+
+    img {
+      width: 100%;
+    }
+
+    @media (min-width: breakpoint("md")) {
+      width: 16.5rem;
+    }
+  }
+
+  &__content {
+    width: 19.5rem;
+    text-align: justify;
+
+    @media (min-width: breakpoint("md")) {
+      width: 21rem;
+    }
+
+    @media (min-width: breakpoint("lg")) {
+      flex: 1 0 auto;
+      margin-left: 3rem;
+    }
+  }
+
+  &__title {
+    color: #d64c68;
+    font-size: 2rem;
+  }
+
+  &__artwork {
+    position: absolute;
+    right: .75rem;
+    bottom: 1.5rem;
+    width: 6.75rem;
+    height: 8.25rem;
+
+    @media (min-width: breakpoint("md")) {
+      top: -1.5rem;
+      right: -1.5rem;
+      bottom: auto;
+    }
+  }
+}

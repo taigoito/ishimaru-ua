@@ -14,6 +14,7 @@
 
 // Layout
 @import "layout/header";
+@import "layout/gNav";
 @import "layout/main";
 @import "layout/footer";
 
@@ -22,7 +23,16 @@
 @import "objects/components/drawerMenu";
 @import "objects/components/icon";
 @import "objects/components/preloader";
+@import "objects/components/bookingBtn";
+@import "objects/components/menuPannel";
 @import "objects/components/slider";
+@import "objects/projects/intro";
+@import "objects/projects/cuisine";
+@import "objects/projects/nailFootcare";
+@import "objects/projects/relaxation";
+@import "objects/projects/access";
+@import "objects/projects/booking";
+@import "objects/projects/spot";
 @import "objects/utilities/button";
 @import "objects/utilities/form";
 @import "objects/utilities/grid";

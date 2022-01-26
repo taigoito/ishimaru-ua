@@ -16,22 +16,23 @@ new DrawerMenu();
 import Scrolling from './scrolling.js';
 new Scrolling();
 
-// Modal
-import Modal from './modal.js';
-new Modal();
-
-// Fader
-import Fader from './fader.js';
-const fader = document.querySelectorAll('.fader');
-fader.forEach((elem) => {
-  new Fader(elem);
-});
-
 // Slider
 import Slider from './slider.js';
 const slider = document.querySelectorAll('.slider');
 slider.forEach((elem) => {
   new Slider(elem);
+});
+
+import TabPannel from './tabPannel.js';
+const pannel1 = new TabPannel({
+  elem: document.getElementById('nailFootcarePannel'),
+  menu: document.getElementById('nailFootcareMenu'),
+  template: document.getElementById('nailFootcareMenu1')
+});
+const pannel2 = new TabPannel({
+  elem: document.getElementById('relaxationPannel'),
+  menu: document.getElementById('relaxationMenu'),
+  template: document.getElementById('relaxationMenu1')
 });
 
 // Evil Icons

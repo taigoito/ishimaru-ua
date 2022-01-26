@@ -3,5 +3,80 @@
  */
 
 .header {
-  
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 175vw;
+
+  @media (min-width: breakpoint("md")) {
+    height: 56.25vw;
+  }
+
+  &__content {
+    width: 30rem;
+
+    @media (min-width: breakpoint("md")) {
+      width: 33%;
+    }
+  }
+
+  &__siteBrand {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 9rem;
+    margin: 1rem 1.5rem;
+  }
+
+  &__sign {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3rem;
+    width: 3rem;
+    margin: auto;
+    animation: blink 3s infinite alternate;
+  }
+
+  &__cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: url("./assets/cover_portrait_main.jpg") no-repeat 50% 50% / cover scroll;
+
+    @media (min-width: breakpoint("md")) {
+      background: url("./assets/cover_main.jpg") no-repeat 50% 50% / cover scroll;
+    }
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }

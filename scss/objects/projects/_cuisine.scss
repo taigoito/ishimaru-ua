@@ -1,0 +1,138 @@
+/**
+ * Project - Cuisine
+ */
+
+.cuisine {
+  @extend %section;
+  padding-top: 6rem;
+  margin-bottom: -24em;
+  padding-bottom: 24rem;
+  
+  &__header {
+    @extend %section__header;
+  }
+
+  &__heading {
+    width: 2.5rem;
+    margin: 0;
+
+    @media (min-width: breakpoint("md")) {
+      width: 3rem;
+    }
+  }
+
+  &__headingSub {
+    position: absolute;
+    top: 33.33%;
+    left: 0;
+    width: 7.5rem;
+    margin: 0;
+
+    @media (min-width: breakpoint("md")) {
+      width: 15rem;
+    }
+  }
+
+  &__headingImage {
+    width: 24rem;
+    margin: 3rem 0 0;
+
+    @media (min-width: breakpoint("md")) {
+      width: 48rem;
+    }
+  }
+
+  &__headingImageSub {
+    position: absolute;
+    top: 12rem;
+    left: 0;
+    width: 8.25rem;
+    margin: 0;
+
+    @media (min-width: breakpoint("md")) {
+      top: 21rem;
+      width: 16.5rem;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (min-width: breakpoint("md")) {
+      width: 60rem;
+      margin: 6rem auto;
+    }
+  }
+
+  &__content {
+    position: relative;
+    width: 24rem;
+    margin: 3rem 0 0 6rem;
+
+    @media (min-width: breakpoint("md")) {
+      margin: 0 auto 0 0;
+    }
+  }
+
+  &__lead {
+    font-size: 1.5rem;
+  }
+
+  &__text {
+    line-height: 1.8;
+
+    &.--small {
+      font-size: .8rem;
+    }
+  }
+
+  &__texture1 {
+    position: absolute;
+    right: .375rem;
+    bottom: -16.67%;
+    width: 4.5rem;
+
+    @media (min-width: breakpoint("md")) {
+      width: 6rem;
+    }
+  }
+
+  &__texture2 {
+    position: absolute;
+    top: 41.67%;
+    right: 108.33%;
+    width: 6rem;
+
+    @media (min-width: breakpoint("md")) {
+      width: 8rem;
+    }
+  }
+
+  &__slider {
+    width: 30rem;
+    margin: 3rem auto;
+    overflow: hidden;
+  }
+
+  &__cover {
+    @extend %section__cover;
+    z-index: -1;
+    background-image: url("./assets/cover_2.png");
+    background-size: auto 100%;
+  
+    @media (min-width: breakpoint("md")) {
+      background-image: url("./assets/cover_2_md.png");
+      background-size: auto 100%;
+    }
+
+    @media (min-width: 1200px) {
+      background-image: url("./assets/cover_2_lg.png");
+      background-size: auto 100%;
+    }
+
+    @media (min-width: 1440px) {
+      background-size: cover;
+    }
+  }
+}

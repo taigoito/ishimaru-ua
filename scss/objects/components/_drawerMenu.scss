@@ -8,8 +8,8 @@
   right: 0;
   z-index: 1110;
   display: block;
-  width: $headerHeight;
-  height: $headerHeight;
+  width: 4.5rem;
+  height: 4.5rem;
   padding: .75rem;
   border: 0;
   background-color: transparent;
@@ -17,24 +17,25 @@
   outline: 0;
   cursor: pointer;
 
-  &:not(.responsiveColor) { // 設定によってheaderが有効のとき
-    @media (min-width: breakpoint("lg")) {
-      display: none;
-    }
-  }
-
   &__navicon.icon, &__close.icon {
     position: absolute;
     top: .75rem;
     right: .75rem;
-    width: $siteBrandHeight;
-    height: $siteBrandHeight;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    background-color: rgba(255, 255, 255, .85);
+    color: #666666;
     transition: .25s all ease-in-out;
   }
 
   &__navicon {
     opacity: 0;
     transform: rotate(45deg);
+
+    .icon__cnt {
+      margin-top: 1px;
+    }
 
     @at-root .drawer:not(.--active) .drawer__navicon {
       opacity: 1;
@@ -43,7 +44,6 @@
   }
 
   &__close {
-    color: $bodyBg;
     opacity: 1;
     transform: rotate(0);
 
@@ -63,8 +63,8 @@
   width: 18rem;
   height: 100%;
   margin: auto;
-  background-color: rgba(themeColor("darkest"), .85);
-  text-align: center;
+  background-color: rgba(255, 255, 255, .85);
+  text-align: left;
   transition: width ease-in-out .25s;
   
   &:not(.--show) {
@@ -90,7 +90,7 @@
   &__item {
     width: 100%;
     margin-bottom: 0;
-    padding-top: .375rem;
+    padding-top: .75rem;
     padding-bottom: .375rem;
     text-transform: capitalize;
 
@@ -107,18 +107,29 @@
 
     &.--social {
       width: 3rem;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
+      margin: 0 .75rem;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
     }
 
     a {
       display: block;
-      color: themeColor("lightest");
+      padding-left: 4.5rem;
+      color: #666666;
       text-decoration: none;
       
       &:hover {
-        color: $linkHoverColor;
+        color: #666666;
         text-decoration: $linkHoverDecoration;
+      }
+    }
+
+    &.--social a {
+      padding-left: 0;
+      opacity: .7;
+
+      &:hover {
+        opacity: .85;
       }
     }
   }

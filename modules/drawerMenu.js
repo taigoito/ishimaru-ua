@@ -18,7 +18,7 @@ export default class DrawerMenu {
     // クローンする対象
     this._brand = document.querySelector('.siteBrand');
     this._primary = document.querySelector('.gNav__primaryMenu');
-    this._social = document.querySelector('.gNav__socialMenu');
+    this._social = document.querySelector('.footer__socialBtns');
   
     // 各セットアップ
     this._inner.classList.add('--collapse');
@@ -62,14 +62,14 @@ export default class DrawerMenu {
 
   _renderTemplate() {
     // ロゴのクローン
-    const brand = this._brand.querySelector('a');
-    const node = document.importNode(this._template.content, true);
-    const li = node.querySelector('li');
-    li.classList.add('--brand');
-    const a = node.querySelector('a');
-    a.setAttribute('href', brand.getAttribute('href'));
-    a.innerHTML = brand.innerHTML;
-    this._inner.appendChild(node);
+    //const brand = this._brand.querySelector('a');
+    //const node = document.importNode(this._template.content, true);
+    //const li = node.querySelector('li');
+    //li.classList.add('--brand');
+    //const a = node.querySelector('a');
+    //a.setAttribute('href', brand.getAttribute('href'));
+    //a.innerHTML = brand.innerHTML;
+    //this._inner.appendChild(node);
     // プライマリメニュー
     if (this._primary) {
       const primaryItems = this._primary.querySelectorAll('a');

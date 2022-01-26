@@ -1,0 +1,235 @@
+/**
+ * Component - Menu Pannel
+ */
+
+.menuPannel {
+  width: 30rem;
+  margin: 0 auto 6rem;
+  padding: 3rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 2rem rgba(127,127,127,.15);
+  overflow: hidden;
+
+  @media (min-width: breakpoint("md")) {
+    width: 60rem;
+    padding: 3rem 4.5rem;
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 1.92;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 4.5rem;
+      height: .25rem;
+      margin: auto;
+    }
+
+    &.--plan {
+      padding-bottom: .75rem;
+
+      &::before {
+        background-color: #f58870;
+      }
+    }
+
+    &.--nailFootcare::before {
+      background-color: #21a6a9;
+    }
+
+    &.--relaxation::before {
+      background-color: #d63c88;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    margin: 1.5rem auto;
+  }
+
+  &__tab {
+    height: 3rem;
+    margin: .75rem 0;
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    text-align: center;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      color: #666666;
+      transition: .25s all ease-in-out;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &.--nailFootcare {
+      flex: 0 0 8rem;
+
+      @media (min-width: breakpoint("md")) {
+        flex: 0 0 10rem;
+      } 
+
+      a:hover {
+        background-color: #e2f3f4;
+        color: #6ec5c7;
+      }
+
+      @at-root .menuPannel__tabs.--nailFootcare:not(.--active) a.--active {
+        background-color: #e2f3f4;
+        color: #6ec5c7;
+      }
+    }
+
+    &.--relaxation {
+      flex: 0 0 12rem;
+
+      @media (min-width: breakpoint("md")) {
+        flex: 0 0 12.5rem;
+      } 
+
+      a:hover {
+        background-color: #fae9f2;
+        color: #d63c88;
+      }
+
+      @at-root .menuPannel__tabs.--relaxation:not(.--active) a.--active {
+        background-color: #fae9f2;
+        color: #d63c88;
+      }
+    }
+  }
+
+  &__container {
+    &.--plan {
+      height: auto;
+    }
+
+    &.--nailFootcare {
+      height: 42rem;
+
+      @media (min-width: breakpoint("md")) {
+        height: 24rem;
+      }
+    }
+
+    &.--relaxation {
+      height: 36rem;
+      
+      @media (min-width: breakpoint("md")) {
+        height: 24rem;
+      }
+    }
+  }
+
+  &__lead {
+    margin-bottom: 3rem;
+    font-size: 1.33rem;
+  }
+
+  &__span {
+    &.--leadPre {
+      display: block;
+      font-size: 1.33rem;
+
+      @media (min-width: breakpoint("md")) {
+        display: inline-block;
+      }
+    }
+    
+    &.--leadPre_short {
+      font-size: 1.33rem;
+    }
+
+    &.--leadMid {
+      display: inline-block;
+      width: 4.5rem;
+      height: .125rem;
+      margin: 0 .75rem;
+      background-color: #cccccc;
+      vertical-align: middle;
+
+      @media (min-width: breakpoint("md")) {
+      }
+    }
+
+    &.--leadSuf {
+      display: block;
+      font-size: 1.33rem;
+      text-align: right;
+
+      @media (min-width: breakpoint("md")) {
+        display: inline-block;
+        vertical-align: top;
+      }
+    }
+    
+    &.--leadSuf_short {
+      font-size: 1.33rem;
+    }
+
+    &.--colored_plan {
+      color: #f58870;
+    }
+
+    &.--colored_nailFootcare {
+      color: #21a6a9;
+    }
+
+    &.--small {
+      display: contents;
+      font-size: 75%;
+    }
+  }
+
+  &__content {
+    &.--flex {
+      @media (min-width: breakpoint("md")) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__image {
+    flex: 0 0 33.33%;
+    margin: 0 0 3rem;
+  }
+
+  &__text {
+    flex: 0 0 58.33%;
+  }
+
+  &__sub {
+    @media (min-width: breakpoint("md")) {
+      flex: 0 0 50%;
+      padding-right: 3.75rem;
+    }
+  }
+
+  &__subheading {
+    font-size: 1.5rem;
+  }
+
+  &__subtext {
+    height: 4.5rem;
+  }
+}
