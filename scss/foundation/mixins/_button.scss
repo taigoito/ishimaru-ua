@@ -22,12 +22,9 @@
     border-radius: 2.25rem;
   }
 
-  //$color: themeColor($key);
-  //background-color: $color;
-  //color: colorYiq($color);
-  background-color: originalColor($key);
-  color: colorYiqByKey($key);
-  opacity: .85;
+  $color: themeColor($key);
+  background-color: $color;
+  color: colorYiq($color);
 
   text-decoration: none;
   text-align: center;
@@ -36,9 +33,8 @@
   cursor: pointer;
 
   &:hover {
-    //background-color: lighten($color, 7.5%);
-    //color: colorYiq(lighten($color, 7.5%));
-    opacity: 1;
+    background-color: lighten($color, 7.5%);
+    color: colorYiq(lighten($color, 7.5%));
 
     text-decoration: none;
   }

@@ -10,10 +10,14 @@
 }
 
 html {
-  font-size: var(--root-font-size, $rootFontSize);
+  font-size: $rootFontSize;
   
-  @media (max-width: breakpoint("sm") - 1) {
-    font-size: $rootFontSizeXs;
+  @media (max-width: breakpoint("lg") - 1) {
+    font-size: map-get($rootFontSizes, "md");
+  }
+  
+  @media (max-width: breakpoint("md") - 1) {
+    font-size: map-get($rootFontSizes, "sm");
   }
 }
 

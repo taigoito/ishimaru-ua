@@ -6,6 +6,9 @@ $spinnerWidth:     48px;
 $spinnerBarsCount: 12;
 $spinnerBarsBg:    $bodyBg;
 
+$preloaderHeight:  100vh;
+$preloaderBg:      themeColor("dark");
+
 @mixin make-spinner-bars($width: $spinnerWidth, $spinnerBarsCount: $spinnerBarsCount, $spinnerBarsBg: $spinnerBarsBg) {
   & > span {
     position: absolute;

@@ -155,9 +155,9 @@
     display: inline-block;
   }
 
-  .post__moreText::after {
-    content: $sliderItemMoreText;
-  }
+  //.post__moreText::after {
+  //  content: $sliderItemMoreText;
+  //}
 
   &__prev, &__next {
     position: absolute;

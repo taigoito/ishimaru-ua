@@ -31,20 +31,15 @@
     }
   }
 
-  //@each $key, $color in $themeColors {
-  @each $key, $color in $originalColors {
+  @each $key, $color in $themeColors {
     &.--#{$key} {
-      //$color: themeColor($key);
-      //background-color: $color;
-      //color: colorYiq($color);
-      background-color: originalColor($key);
-      color: colorYiqByKey($key);
-      opacity: .85;
+      $color: themeColor($key);
+      background-color: $color;
+      color: colorYiq($color);
       
       &:hover {
-        //background-color: lighten($color, 7.5%);
-        //color: colorYiq(lighten($color, 7.5%));
-        opacity: 1;
+        background-color: lighten($color, 7.5%);
+        color: colorYiq(lighten($color, 7.5%));
       }
     }
   }

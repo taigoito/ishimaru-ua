@@ -21,7 +21,7 @@
     background-size: cover;
     opacity: 1;
     transition: 1s linear opacity;
-    filter: var(--cover-filter, $blur);
+    //filter: var(--cover-filter, $blur);
 
     @for $i from 1 through 4 {
       &.--num_#{$i} {

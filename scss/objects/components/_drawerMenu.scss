@@ -99,9 +99,9 @@
       padding-bottom: 1rem;
 
       img {
-        filter: var(--header-filter, $whiteShape);
         width: auto;
         height: $siteBrandHeight;
+        //filter: var(--header-filter, $whiteShape);
       }
     }
 
