@@ -21,6 +21,7 @@ export default class Slider {
     this._aspectRatio = this._elem.dataset.aspectRatio || 9 / 16;
     this._interval = this._elem.dataset.interval || 3000; // 1000未満を指定すると自動再生しない
     this._duration = this._elem.dataset.duration || 500;
+    this._navType = (this._elem.dataset.navType - 0) || 0; // 0: nav無し, 1: ドット型, 2: インデックス表示型
 
     // 各状態管理
     this._currentIndex = 0;
@@ -106,15 +107,27 @@ export default class Slider {
   
   // ナビゲーション(.slider__nav)を設置
   _setupNav() {
-    this._nav = document.createElement('ul');
-    this._nav.classList.add('sliderNav');
-    for (let i = 0; i < this._itemsCount; i++) {
-      const li = document.createElement('li');
-      li.classList.add('sliderNav__item');
-      li.dataset.targetIndex = i; // data-target-indexを挿入
-      this._nav.appendChild(li);
+    if (this._navType === 1) {
+      this._nav = document.createElement('ul');
+      this._nav.classList.add('sliderNav');
+      for (let i = 0; i < this._itemsCount; i++) {
+        const li = document.createElement('li');
+        li.classList.add('sliderNav__item');
+        li.dataset.targetIndex = i; // data-target-indexを挿入
+        this._nav.appendChild(li);
+      }
+      this._elem.after(this._nav);
+    } else if (this._navType === 2) {
+      this._nav = document.createElement('div');
+      this._nav.classList.add('sliderNav');
+      this._navCurrentIndex = document.createElement('span');
+      this._navCurrentIndex.classList.add('sliderNav__currentIndex');
+      this._nav.appendChild(this._navCurrentIndex);
+      this._navMaxIndex = document.createElement('span');
+      this._navMaxIndex.classList.add('sliderNav__maxIndex');
+      this._nav.appendChild(this._navMaxIndex);
+      this._elem.after(this._nav);
     }
-    this._elem.after(this._nav);
   }
 
   // アイテムが7個未満の場合に予備を連ねておく
@@ -135,11 +148,16 @@ export default class Slider {
     }
     this._items[this._currentIndex].classList.add('--current');
     // ナビゲーション
-    if (this._nav.querySelector('.--current')) {
-      this._nav.querySelector('.--current').classList.remove('--current');
+    if (this._navType === 1) {
+      if (this._nav.querySelector('.--current')) {
+        this._nav.querySelector('.--current').classList.remove('--current');
+      }
+      this._navItems = this._nav.children;
+      this._navItems[this._currentIndex % this._itemsCount].classList.add('--current');
+    } else if (this._navType === 2) {
+      this._navCurrentIndex.textContent = this._currentIndex + 1;
+      this._navMaxIndex.textContent = this._itemsCount;
     }
-    this._navItems = this._nav.children;
-    this._navItems[this._currentIndex % this._itemsCount].classList.add('--current');
   }
 
   _handleEvents() {
@@ -222,13 +240,15 @@ export default class Slider {
     });
 
     // ナビゲーション操作
-    this._nav.addEventListener('click', (event) => {
-      const target = event.target;
-      if (target.dataset.targetIndex) {
-        this.move(target.dataset.targetIndex - this._currentIndex % this._itemsCount);
-        this.stopInterval();
-      }
-    });
+    if (this._navType === 1) {
+      this._nav.addEventListener('click', (event) => {
+        const target = event.target;
+        if (target.dataset.targetIndex) {
+          this.move(target.dataset.targetIndex - this._currentIndex % this._itemsCount);
+          this.stopInterval();
+        }
+      });
+    }
 
     // 前ボタン
     this._prev.addEventListener('click', (event) => {
@@ -320,8 +340,9 @@ export default class Slider {
 
   _getAdjustedDistance(index) {
     const len = this._items.length;
-    let result = window.innerWidth / 2;
-    result -= this._items[index % len].clientWidth / 2;
+    //let result = window.innerWidth / 2;
+    //result -= this._items[index % len].clientWidth / 2;
+    let result = 0;
     for (let i = 0; i > -3; i--) {
       let j = (index + i - 1 + len) % len;
       result -= this._items[j].clientWidth;
