@@ -9,7 +9,7 @@ export default class Scrolling {
   constructor(elem) {
     // 各オプション (body要素のdata属性から取得)
     this._elem = elem || document.body;
-    this._offset = this._elem.dataset.scrollingOffset || 72; // header標準
+    this._offset = this._elem.dataset.scrollingOffset || 0;
     this._duration = this._elem.dataset.scrollingDuration || 1000;
     this._handleEvents();
   }

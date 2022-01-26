@@ -12,14 +12,6 @@ new Preloader();
 import DrawerMenu from './drawerMenu.js';
 new DrawerMenu();
 
-// Sub Menus
-import SubMenus from './subMenus.js';
-new SubMenus();
-
-// Responsive Color
-import ResponsiveColor from './responsiveColor.js';
-new ResponsiveColor();
-
 // Scrolling
 import Scrolling from './scrolling.js';
 new Scrolling();
