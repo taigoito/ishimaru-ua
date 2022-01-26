@@ -998,7 +998,7 @@ button, [type="button"], [type="reset"], [type="submit"] {
 }
 
 .menuPannel__container.--nailFootcare {
-  height: 42rem;
+  height: 48rem;
 }
 
 @media (min-width: 900px) {
