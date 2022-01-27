@@ -231,6 +231,11 @@
         justify-content: space-between;
       }
     }
+
+    & > p:only-child {
+      margin-top: -1.5rem;
+      margin-bottom: 3rem;
+    }
   }
 
   &__image {
