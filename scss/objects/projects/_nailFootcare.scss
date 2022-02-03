@@ -127,16 +127,16 @@
   &__cover {
     @extend %section__cover;
     margin-top: 15rem;
-    background-image: url("./assets/cover_3.png");
+    background-image: url("./assets/cover_3.jpg");
   
     @media (min-width: breakpoint("md")) {
       margin-top: 0;
-      background-image: url("./assets/cover_3_md.png");
+      background-image: url("./assets/cover_3_md.jpg");
     }
   
     @media (min-width: 1200px) {
       margin-top: 0;
-      background-image: url("./assets/cover_3_lg.png");
+      background-image: url("./assets/cover_3_lg.jpg");
     }
   }
 }

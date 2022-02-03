@@ -59,14 +59,14 @@
 
   &__cover {
     @extend %section__cover;
-    background-image: url("./assets/cover_1.png");
+    background-image: url("./assets/cover_1.jpg");
   
     @media (min-width: breakpoint("md")) {
-      background-image: url("./assets/cover_1_md.png");
+      background-image: url("./assets/cover_1_md.jpg");
     }
   
     @media (min-width: 1200px) {
-      background-image: url("./assets/cover_1_lg.png");
+      background-image: url("./assets/cover_1_lg.jpg");
     }
   }
 
